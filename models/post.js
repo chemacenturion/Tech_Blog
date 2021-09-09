@@ -1,6 +1,3 @@
-// article needs title, assoc w/ user, timestamp, and have the ability to have comments.
-// posts can have many comments
-// posts can have one user
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -29,11 +26,11 @@ Post.init(
                 key: 'id',
             },
         },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW,
-        },
+        // date_created: {
+        //     type: DataTypes.DATE,
+        //     allowNull: false,
+        //     defaultValue: DataTypes.NOW,
+        // },
     },
     {
         sequelize,
