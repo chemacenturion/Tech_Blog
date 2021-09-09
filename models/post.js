@@ -1,10 +1,10 @@
 // article needs title, assoc w/ user, timestamp, and have the ability to have comments.
 // posts can have many comments
 // posts can have one user
-const Model = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {}
+class Post extends Model {};
 
 Post.init(
     {
@@ -15,6 +15,10 @@ Post.init(
             autoIncrement: true,
         },
         title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        content: {
             type: DataTypes.STRING,
             allowNull: false,
         },

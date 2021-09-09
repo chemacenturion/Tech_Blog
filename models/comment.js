@@ -1,9 +1,9 @@
 // text field, user assoc, timestamp
 // comments can have one post
-const { DataTypes } = require('sequelize/types');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
+class Comment extends Model {};
 
 Comment.init(
     {
@@ -13,7 +13,7 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        text: {
+        content: {
             type: DataTypes.STRING,
         },
         user_id: {
@@ -23,6 +23,14 @@ Comment.init(
                 key: 'id',
             },
         },
+        post_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'post',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
