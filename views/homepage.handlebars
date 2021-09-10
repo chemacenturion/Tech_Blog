@@ -1,0 +1,7 @@
+{{#each postData as |post|}}
+<p>{{this.id}}</p>
+<p>{{this.title}}</p>
+<p>{{this.content}}</p>
+<p>{{this.user_id}}</p>
+{{post.user.username}}
+{{/each}}
