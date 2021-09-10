@@ -2,7 +2,7 @@ const { Post, User } = require('../models');
 
 const router = require('express').Router();
 
-router.use('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
     const postData = await Post.findAll({
         include: [
@@ -23,6 +23,8 @@ router.use('/', async (req, res) => {
         res.status(500).json('There was an error');
     }
 });
+
+
 
 module.exports = router;
 

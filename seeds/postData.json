@@ -1,7 +1,7 @@
 [
     {
-        "title": "test title",
-        "content": "test content",
+        "title": "Why a gitignore file is so important!",
+        "content": "The purpose of gitignore files is to ensure that certain files not tracked by git remain untracked.",
         "user_id": 1
     }
 ]

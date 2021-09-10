@@ -23,7 +23,7 @@ const sess = {
 
 app.use(session(sess));
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({ helpers }));
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
