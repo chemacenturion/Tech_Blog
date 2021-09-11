@@ -1,14 +1,18 @@
 <div class="card">
-    <div class="card-body">
-        <h1>Create Account</h1>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Please enter your username here!">
-            </div>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Please enter your password: Must be 8 characters in length!">
-            </div>
-            <div class="card-footer bg-transparent border-success">
-                <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Create Account!</a>
-            </div>
-    </div>
+    <form id='sign-up-form'>
+        <div class="card-body">
+            <h1>Create Account</h1>
+                <div class="input-group mb-3">
+                    <input type="username" class="form-control" id="sign-up-username" autocomplete="off" placeholder="Please enter your username here!">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="sign-up-password" autocomplete="off" placeholder="Please enter your password: Must be 8 characters in length!">
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <button class="btn btn-primary me-md-2" type="submit">Create Account!</button>
+                </div>
+        </div>
+    </form>
 </div>
+
+<script src='js/signup.js'></script>

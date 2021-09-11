@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
         post.get({ plain: true })
     );
 
-    console.log(allPosts);
+    
     res.render('homepage', { postData: allPosts });
     } catch (err) {
         res.status(500).json('There was an error');
@@ -32,9 +32,13 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
-router.get('/logout', async (req, res) => {
-    res.render('/logout');
+router.get('/dashboard', async (req, res) => {
+    res.render('dashboard');
 })
+
+// router.get('/logout', async (req, res) => {
+//     res.render('homepage', { postData: allPosts });
+// })
 
 module.exports = router;
 
