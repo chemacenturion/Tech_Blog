@@ -17,5 +17,7 @@ loginForm.addEventListener('submit', async (e) => {
         },
     });
 
-    console.log(loginPost);
+    if (loginPost.ok) {
+        console.log('logged in!');
+    };
 });
