@@ -33,8 +33,12 @@ router.get('/signup', async (req, res) => {
 });
 
 router.get('/dashboard', withAuth, async (req, res) => {
-    res.render('dashboard');
-})
+    res.render('dashboard', {layout: 'dashboard2.handlebars'});
+});
+
+router.get('/logout', async (req, res) => {
+    res.render('login', {layout: 'main.handlebars'});
+});
 
 // router.get('/dashboard', withAuth, async (req, res) => {
 //     try {
