@@ -1,12 +1,12 @@
-<div class="card">
-    <ol class="list-group list-group-numbered">
-        {{#each posts}}
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">{{this.title}}</div>
-    </div>
-    <button class="btn btn-danger">Delete</button>
-  </li>
-  {{/each}}
-</ol>
-</div>
+
+{{#each postData}}
+    <div class="card mt-5">
+        <h5 class="card-header">{{this.title}}</h5>
+        <div class="card-body">
+            <p class="card-text">{{this.content}}</p>
+        </div>
+        <div class="card-footer text-muted">
+            <p>Posted by {{this.user.username}} on {{date_formatter this.createdAt}}</p>
+        </div>
+        </div>
+{{/each}}

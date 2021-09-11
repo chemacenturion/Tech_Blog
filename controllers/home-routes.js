@@ -18,45 +18,27 @@ router.get('/', async (req, res) => {
     );
 
     
-    res.render('homepage', { postData: allPosts });
+    res.render('all-posts', { postData: allPosts });
     } catch (err) {
         res.status(500).json('There was an error');
     }
 });
 
 router.get('/login', async (req, res) => {
-    res.render('login');
+    console.log(req.session)
+    if (req.session.logged_in) {
+        res.redirect('/');
+      } else {
+        res.render('login');
+      }
 });
 
 router.get('/signup', async (req, res) => {
-    res.render('signup');
+    if (req.session.logged_in) {
+        res.redirect('/');
+      } else {
+        res.render('signup');
+      }
 });
-
-router.get('/dashboard', withAuth, async (req, res) => {
-    res.render('dashboard', {layout: 'dashboard2.handlebars'});
-});
-
-router.get('/logout', async (req, res) => {
-    res.render('login', {layout: 'main.handlebars'});
-});
-
-// router.get('/dashboard', withAuth, async (req, res) => {
-//     try {
-//         const userData = await User.findByPk(req.sessions.user_id, {
-//             include: [
-//                 {
-//                     model: Post,
-//                 },
-//             ],
-//         });
-    
-//         const postsByUser = userData.get({ plain: true });
-//         console.log(postsByUser);
-
-//         res.render('dashboard', { posts: postsByUser.posts });
-//     } catch (e) {
-//         res.status(500).json(e)
-//     }
-// });
 
 module.exports = router;
