@@ -23,3 +23,21 @@ createPostForm.addEventListener('submit', async (e) => {
         console.log('it worked!');
     };
 });
+
+orderedList.addEventListener('click', async (e) => {
+    console.log('orderedList'); 
+    
+    if (e.target.tagName === 'BUTTON') {
+        const id = e.target.getAttribute('data-id');
+
+        deletePost = await fetch (`/api/post/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (deletePost.ok) {
+            document.location.href = '/dashboard'; 
+        } else {
+            alert('Failed to delete!');
+        }
+    }
+});
