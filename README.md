@@ -14,7 +14,7 @@ This is the first full stack application we have been tasked to build and deploy
 * [Questions](#Questions)
 
 ## Demonstration
-![Quick GIF](https://github.com/chemacenturion/README.md-Generator/blob/main/images/Untitled_%20Aug%205,%202021%2012_09%20PM.gif?raw=true)
+![Quick GIF](https://github.com/chemacenturion/Tech_Blog/blob/main/public/images/Tech%20Blog.gif?raw=true)
 
 ## Deployed-Link
 https://vast-taiga-97023.herokuapp.com/
